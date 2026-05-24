@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fef6f9;
+  color: #333;
+}
+
+.topbar {
+  background: #ffe6f0;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 80px;
+}
+
+.topbar h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+}
+
+.login-card {
+  background: linear-gradient(to bottom right, #fff, #ffe6f0);
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 80%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  background: #ccc;
+  border-radius: 50%;
+  background-image: url('https://img.icons8.com/ios-filled/100/000000/user.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.form-options a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #2979ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+.or-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.topbar {
+  background: #ffe6f0;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flecha {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  background: #ccc;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.topbar h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}

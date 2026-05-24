@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menú</title>
+  <link rel="stylesheet" href="../css/menu.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <span class="flecha" onclick="history.back()">&#8592;</span>
+    </div>
+  </header>
+  <div class="container">
+    <div class="top-menu">
+      <div class="menu-group">
+        <div class="menu-item selected">
+          <img src="Imagenes/productos.png" alt="Productos" width="20" height="20" />
+          <span><a href="menu.html">Productos</a></span>
+        </div>
+        <div class="sub-menu">
+          <div class="sub-item" onclick="cargarPagina('front/AgregarProducto.html')">
+            <img src="Imagenes/agregar.png" alt="Agregar" width="18" height="18" />
+            <span><a href="AgregarProducto.html">Agregar Producto</a></span>
+          </div>
+          <div class="sub-item" onclick="cargarPagina('EliminarProducto.html')">
+            <img src="Imagenes/eliminar.png" alt="Eliminar" width="18" height="18" />
+            <span><a href="EliminarProducto.html">Eliminar Producto</a></span>
+          </div>
+          <div class="sub-item" onclick="cargarPagina('BuscarProducto.html')">
+            <img src="Imagenes/buscar.png" alt="Buscar" />
+            <span><a href="BuscarProducto.html">Buscar Producto</a></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="Imagenes/venta.png" alt="Venta" />
+        <span><a href="Venta.html">Venta</a></span>
+      </div>
+
+      <div class="menu-item">
+        <img src="Imagenes/reporte.png" alt="Reporte" />
+        <span><a href="reporte.html">Reporte</a></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

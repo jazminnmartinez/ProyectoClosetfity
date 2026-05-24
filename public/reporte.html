@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reporte de Ventas</title>
+  <link rel="stylesheet" href="../css/reporte.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <span class="flecha" onclick="history.back()">&#8592;</span>
+    </div>
+  </header>
+  <div class="navbar">
+    <div class="nav-item">
+      <img src="Imagenes/productos.png" alt="Productos" width="20" height="20" />
+          <span><a href="menu.html">Productos</a></span>
+    </div>
+    <div class="nav-item">
+      <img src="Imagenes/venta.png" alt="Venta"/>
+        <span><a href="Venta.html">Venta</a></span>
+    </div>
+    <div class="nav-item selected">
+      <img src="Imagenes/reporte.png" alt="Reporte"/>
+        <span><a href="reporte.html">Reporte</a></span>
+    </div>
+  </div>
+
+  <div class="reporte-contenedor">
+    <div class="tabs">
+      <button class="tab">Reporte de producto</button>
+      <button class="tab active">Reporte de ventas</button>
+    </div>
+
+    <table id="tabla-ventas">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Se llena con JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const datos = [
+      { fecha: "14/10/2023", producto: "Mangas", cantidad: 20, total: "6,000$" },
+      { fecha: "14/10/2023", producto: "Camisetas", cantidad: 10, total: "3,000$" },
+      { fecha: "14/10/2023", producto: "Stickers", cantidad: 40, total: "250$" },
+      { fecha: "14/10/2023", producto: "Albums", cantidad: 10, total: "5,000$" },
+      { fecha: "14/10/2023", producto: "Snacks", cantidad: 15, total: "800$" },
+      { fecha: "14/10/2023", producto: "Figuras", cantidad: 23, total: "4,000$" },
+      { fecha: "14/10/2023", producto: "Pins", cantidad: 14, total: "525$" },
+    ];
+
+    const tbody = document.querySelector("#tabla-ventas tbody");
+
+    datos.forEach(d => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td>${d.fecha}</td>
+        <td>${d.producto}</td>
+        <td>${d.cantidad}</td>
+        <td>${d.total}</td>
+      `;
+      tbody.appendChild(row);
+    });
+  </script>
+</body>
+</html>

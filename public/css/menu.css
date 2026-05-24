@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 40px;
+}
+
+.top-menu {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.menu-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.menu-item {
+  width: 200px;
+  height: 160px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.menu-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.menu-item span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menu-item.selected {
+  background-color: #ffe6eb;
+}
+
+.sub-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sub-item {
+  width: 200px;
+  height: 80px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15px;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+
+.sub-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+}
+
+.sub-item img[src*="buscar.png"] {
+  transform: scale(2);
+}
+
+.sub-item img[src*="agregar.png"] {
+  transform: scale(3);
+}
+
+.sub-item span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flecha {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffe4ec;
+  padding: 20px;
+  border-radius: 15px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.flecha {
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #ffe4ec;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-left: 150px;
+}

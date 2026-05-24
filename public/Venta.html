@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Venta</title>
+  <link rel="stylesheet" href="../css/Venta.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <span class="flecha" onclick="history.back()">&#8592;</span>
+    </div>
+  </header>
+  <div class="center-wrapper">
+    <div class="layout">
+      <!-- Panel superior -->
+      <div class="top-menu">
+        <div class="menu-item selected">
+          <img src="Imagenes/productos.png" alt="Productos" width="20" height="20" />
+          <span><a href="menu.html">Productos</a></span>
+        </div>
+        <div class="menu-item">
+        <img src="Imagenes/venta.png" alt="Venta"/>
+        <span><a href="Venta.html">Venta</a></span>
+      </div>
+        <div class="menu-item">
+        <img src="Imagenes/reporte.png" alt="Reporte"/>
+        <span><a href="reporte.html">Reporte</a></span>
+      </div>
+    </div>
+
+      <!-- Panel inferior -->
+      <div class="form-container">
+        <h2>Opciones de venta</h2>
+
+        <!-- Radio buttons -->
+        <div class="radio-group">
+          <label><input type="radio" name="filtro" value="codigo" checked /> Código</label>
+          <label><input type="radio" name="filtro" value="nombre" /> Nombre</label>
+        </div>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+          <input type="text" id="campoBusqueda" placeholder="Buscar..." />
+          <button class="btn-buscar" onclick="buscarProducto()">Buscar</button>
+        </div>
+
+        <!-- Tabla -->
+        <table class="productos-table">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+
+        <!-- Botón de venta -->
+        <button class="btn-venta">Generar Venta</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tablaBody = document.querySelector("tbody");
+    const btnGenerar = document.querySelector(".btn-venta");
+
+    const productosOriginales = [
+      { codigo: "0587", nombre: "Photocard", cantidad: 400 },
+      { codigo: "2367", nombre: "T-shirt", cantidad: 250 },
+      { codigo: "2345", nombre: "Poster", cantidad: 100 }
+    ];
+
+    function cargarProductos(productos) {
+      tablaBody.innerHTML = "";
+      productos.forEach(p => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+          <td>${p.codigo}</td>
+          <td>${p.nombre}</td>
+          <td>${p.cantidad}</td>
+        `;
+        tablaBody.appendChild(fila);
+      });
+    }
+
+    function buscarProducto() {
+      const valorBusqueda = document.getElementById("campoBusqueda").value.toLowerCase();
+      const filtro = document.querySelector('input[name="filtro"]:checked').value;
+
+      const filtrados = productosOriginales.filter(p => {
+        if (filtro === "codigo") {
+          return p.codigo.includes(valorBusqueda);
+        } else {
+          return p.nombre.toLowerCase().includes(valorBusqueda);
+        }
+      });
+
+      cargarProductos(filtrados);
+    }
+
+    btnGenerar.addEventListener("click", () => {
+      tablaBody.innerHTML = "";
+      btnGenerar.disabled = true;
+      btnGenerar.textContent = "Procesando...";
+
+      setTimeout(() => {
+        cargarProductos(productosOriginales);
+        btnGenerar.disabled = false;
+        btnGenerar.textContent = "Generar Venta";
+        alert("¡Venta completada!");
+      }, 2000);
+    });
+
+    // Cargar productos al iniciar
+    cargarProductos(productosOriginales);
+  </script>
+</body>
+</html>

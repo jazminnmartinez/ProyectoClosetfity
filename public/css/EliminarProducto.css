@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.layout {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  gap: 0;
+}
+
+/* Panel izquierdo */
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  width: 50%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.sub-item img[src*="buscar.png"] {
+  transform: scale(2);
+}
+
+.sub-item img[src*="agregar.png"] {
+  transform: scale(3);
+}
+
+/* Panel derecho */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
+  width: 50%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.top-menu {
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+}
+
+.menu-item {
+  width: 180px;
+  height: 140px;
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.menu-item:hover {
+  transform: scale(1.05);
+}
+
+.menu-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.menu-item span {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.menu-item.selected {
+  background-color: #ffe6eb;
+}
+
+.sub-item {
+  width: 200px;
+  height: 80px;
+  background-color: #d9d9d9;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 15px;
+  transition: background-color 0.2s;
+}
+
+.sub-item img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
+
+.sub-item span {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sub-item.active {
+  background-color: #caffd0;
+}
+
+/* Estilo especial para eliminar */
+.sub-item.eliminar.active {
+  background-color: #f86363;
+  color: white;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background-color: #ffe6eb;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+}
+
+.form-container h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.form-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.form-content form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-container label {
+  font-weight: bold;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.form-container button {
+  padding: 10px;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.form-container button:hover {
+  background-color: #ff4757;
+}
+
+.product-image {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.flecha {
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #ffe4ec;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-left: 150px;
+}

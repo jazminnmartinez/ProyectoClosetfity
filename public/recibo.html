@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recibo de Pago</title>
+  <link rel="stylesheet" href="../css/recibo.css" />
+</head>
+<body>
+  <div class="ticket" id="ticket">
+    <div class="check-icon">✅</div>
+    <h2>Pago exitoso!</h2>
+    <h1 id="monto-total"></h1>
+
+    <hr />
+
+    <div class="campo"><span>Número de referencia</span><span id="referencia"></span></div>
+    <div class="campo"><span>Fecha y hora de pago</span><span id="fecha"></span></div>
+    <div class="campo"><span>Método de pago</span><span id="metodo"></span></div>
+    <div class="campo"><span>Tienda</span><span id="tienda"></span></div>
+    <div class="campo"><span>Nombre del remitente</span><span id="remitente"></span></div>
+    <div class="campo"><span>Monto</span><span id="monto"></span></div>
+    <div class="campo"><span>Comisión</span><span id="comision"></span></div>
+
+    <div class="pdf-link">
+      <a href="#" onclick="descargarPDF()">📄 Recibo en PDF</a>
+    </div>
+  </div>
+
+  <script>
+    // Simulación de datos extraídos de base de datos
+    const datosPago = {
+      referencia: "000085752257",
+      fecha: "25-02-2023, 13:22:16",
+      metodo: "Transferencia Bancaria",
+      tienda: "Junopi Shop",
+      remitente: "Jeremy Mora",
+      monto: "MXN 750.00",
+      comision: "MXN 15.00",
+      total: "MXN 765.00"
+    };
+
+    // Insertar en HTML
+    document.getElementById("referencia").textContent = datosPago.referencia;
+    document.getElementById("fecha").textContent = datosPago.fecha;
+    document.getElementById("metodo").textContent = datosPago.metodo;
+    document.getElementById("tienda").textContent = datosPago.tienda;
+    document.getElementById("remitente").textContent = datosPago.remitente;
+    document.getElementById("monto").textContent = datosPago.monto;
+    document.getElementById("comision").textContent = datosPago.comision;
+    document.getElementById("monto-total").textContent = datosPago.total;
+
+    // Descargar como PDF (si deseas implementar después)
+    function descargarPDF() {
+      window.print(); // Simple para test. Para PDF real usar html2pdf o jsPDF.
+    }
+  </script>
+</body>
+</html>

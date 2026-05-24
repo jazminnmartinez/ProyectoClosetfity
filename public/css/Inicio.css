@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+header {
+  background-color: hsl(342, 100%, 95%);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  background: #ccc;
+  border-radius: 50%;
+  background-image: url('https://img.icons8.com/ios-filled/100/000000/user.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.flecha {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  background: #ccc;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.nav-right .user-icon {
+  width: 40px;
+  height: 40px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 100px 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #ffe4ec;
+  padding: 20px;
+  border-radius: 15px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.flecha {
+  position: absolute;    
+  top: 120px;             
+  left: 20px;             
+  color: rgb(0, 0, 0);
+  padding: 10px 20px;
+  background-color: #ffe4ec;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 8px;
+  z-index: 10;            
+}

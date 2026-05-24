@@ -1,0 +1,91 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.ticket {
+  background: white;
+  padding: 30px 25px;
+  border-radius: 25px;
+  max-width: 350px;
+  width: 90%;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  border: 1px solid #e0e0e0;
+  position: relative;
+}
+
+.ticket::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: repeating-linear-gradient(
+    90deg,
+    #fff0f5,
+    #fff0f5 10px,
+    white 10px,
+    white 20px
+  );
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.check-icon {
+  font-size: 30px;
+  background-color: #e1f7e3;
+  color: #28a745;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  text-align: center;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 24px;
+  color: #000;
+}
+
+hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.campo {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.campo span:last-child {
+  font-weight: bold;
+}
+
+.pdf-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pdf-link a {
+  text-decoration: none;
+  color: #444;
+  font-size: 14px;
+}

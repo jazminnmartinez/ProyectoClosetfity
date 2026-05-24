@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>AgregarProducto</title>
+  <link rel="stylesheet" href="../css/AgregarProducto.css" />
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <span class="flecha" onclick="history.back()">&#8592;</span>
+    </div>
+  </header>
+  <div class="center-wrapper">
+    <div class="layout">
+      <!-- Panel izquierdo -->
+      <div class="left-panel">
+        <div class="menu-item selected">
+          <img src="Imagenes/productos.png" alt="Productos" width="20" height="20" />
+          <span><a href="menu.html">Productos</a></span>
+        </div>
+
+        <div class="sub-item" onclick="cargarPagina('front\\AgregarProducto.html')">
+          <img src="Imagenes/agregar.png" alt="Agregar" width="18" height="18" />
+          <span><a href="AgregarProducto.html">Agregar Producto</a></span>
+        </div>
+
+        <div class="sub-item" onclick="cargarPagina('EliminarProducto.html')">
+          <img src="Imagenes/eliminar.png" alt="Eliminar" width="18" height="18" />
+          <span><a href="EliminarProducto.html">Eliminar Producto</a></span>
+        </div>
+
+        <div class="sub-item" onclick="cargarPagina('BuscarProducto.html')">
+          <img src="Imagenes/buscar.png" alt="Buscar"/>
+          <span><a href="BuscarProducto.html">Buscar Producto</a></span>
+        </div>
+      </div>
+
+      <!-- Panel derecho -->
+      <div class="right-panel">
+        <div class="top-menu">
+          <div class="menu-item">
+            <img src="Imagenes/venta.png" alt="Venta" />
+            <span><a href="Venta.html">Venta</a></span>
+          </div>
+          <div class="menu-item">
+            <img src="Imagenes/reporte.png" alt="Reporte"/>
+            <span><a href="reporte.html">Reporte</a></span>
+          </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="form-container">
+          <h2>Agregar Producto</h2>
+          <div class="form-content">
+            <form id="product-form">
+              <label>
+                Descripcion
+                <input type="text" name="descripcion" required />
+              </label>
+              <label>
+                Precio
+                <input type="text" name="precio" required />
+              </label>
+              <label>
+                ID del Proveedor
+                <input type="number" name="id_proveedor" required />
+              </label>
+              <button type="submit">Agregar</button>
+            </form>
+            <div class="product-image">
+              <img src="https://cdn-icons-png.flaticon.com/512/3145/3145765.png" alt="Producto" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script>
+    document.getElementById('product-form').addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  const formData = {
+    descripcion: this.descripcion.value,
+    precio: parseFloat(this.precio.value),
+    id_proveedor: parseInt(this.id_proveedor.value) || null
+  };
+
+  fetch('http://localhost:3000/productos', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
+  })
+  .then(async (res) => {
+    if (!res.ok) {
+     
+      const errorData = await res.json();
+      throw new Error(errorData.message || 'Error al agregar producto');
+    }
+    return res.json();
+  })
+  .then(data => {
+    alert('Producto agregado correctamente');
+    this.reset();
+  })
+  .catch(error => {
+    alert('Error al agregar producto: ' + error.message);
+    console.error('Error:', error);
+  });
+});
+
+</script>
+</body>
+</html>

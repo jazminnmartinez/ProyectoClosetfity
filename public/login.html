@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InicioSesion</title>
+  <link rel="stylesheet" href="../css/InicioSesion.css" />
+</head>
+<body>
+  <header class="topbar">
+  <div class="left-section">
+   
+    <img src="Imagenes\logo.png" alt="Logo" class="logo">
+  </div>
+  <h1>Junopi Shop</h1>
+  <div class="menu-icon">&#9776;</div>
+</header>
+  <main class="login-wrapper">
+    <div class="login-card">
+      <div class="avatar"></div>
+      <h2>Login</h2>
+      <p class="subtitle">Ingrese su usuario y contraseña.</p>
+      <form action="/login" method="POST">
+        <input type="text" name="username" required>
+        <input type="password" name="password" required>
+        <div class="form-options">
+          <label><input type="checkbox" name="remember"> Recordarme </label>
+          <a href="../css/#">No recuerda su contraseña?</a>
+        </div>
+        <button type="submit">Iniciar sesion</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+  const form = document.querySelector('form');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); 
+
+    const formData = new FormData(form);
+    const data = {
+      username: formData.get('username'),
+      password: formData.get('password')
+    };
+
+    try {
+      const res = await fetch('http://localhost:3000/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        alert('Error: ' + errorData.message);
+        return;
+      }
+
+      const result = await res.json();
+      // Guarda el token en localStorage o sessionStorage
+      localStorage.setItem('token', result.token);
+
+
+      window.location.href = '/Inicio.html';
+
+    } catch (error) {
+      alert('Error en la comunicación con el servidor');
+      console.error(error);
+    }
+  });
+</script>
+
+</body>
+</html>
